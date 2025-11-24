@@ -122,21 +122,23 @@ public class ServidorMestre {
             // Menu de Dicas ao errar
             String dica = "";
             while(true) {
-                System.out.println("\nO jogador errou. Escolha a dica:");
+                System.out.println("\nO jogador "+ player.name + " errou. Escolha a dica:");
                 System.out.println("1. Frio");
                 System.out.println("2. Morno");
                 System.out.println("3. Quente");
-                System.out.println("4. Relembrar palavra");
+                System.out.println("4. Quentíssimo");
+                System.out.println("5. Relembrar palavra");
                 System.out.print("Opção: ");
                 String op = console.nextLine();
 
-                if(op.equals("4")) {
+                if(op.equals("5")) {
                     System.out.println(">> Palavra secreta: " + secretWord);
                     continue;
                 }
                 if(op.equals("1")) { dica = "Frio"; break; }
                 if(op.equals("2")) { dica = "Morno"; break; }
                 if(op.equals("3")) { dica = "Quente"; break; }
+                if(op.equals("4")) { dica = "Quentíssimo"; break; }
             }
 
             broadcast("MSG:Dica do Mestre: " + dica);
